@@ -1,853 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASTON COFFEE</title>
     <style>
         /* Import Fonts */
-/* Import Font Siemreap ពី Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
+        /* Import Font Siemreap ពី Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
 
-body {
-    font-family: 'Siemreap', sans-serif;
-    background-color: #e5d2b8; /* ពណ៌ផ្ទៃក្រោយកាកាវស្តើង */
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: 'Siemreap', sans-serif;
+            background-color: #e5d2b8;
+            /* ពណ៌ផ្ទៃក្រោយកាកាវស្តើង */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Navbar */
-.navbar-coffee {
-    background-color: #3c1e0a !important; /* ពណ៍ត្នោតចាស់ */
-    padding: 12px 0;
-}
+        /* Navbar */
+        .navbar-coffee {
+            background-color: #3c1e0a !important;
+            /* ពណ៍ត្នោតចាស់ */
+            padding: 12px 0;
+        }
 
-.navbar-brand {
-    color: #ffffff !important;
-    font-weight: 700;
-}
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 700;
+        }
 
-.navbar-brand i {
-    color: #f39c12;
-}
+        .navbar-brand i {
+            color: #f39c12;
+        }
 
-/* Hero Header Banner */
-.hero-banner {
-    background: linear-gradient(rgba(60, 30, 10, 0.75), rgba(60, 30, 10, 0.75)), 
+        /* Hero Header Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(60, 30, 10, 0.75), rgba(60, 30, 10, 0.75)),
                 url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-    color: #ffffff;
-    padding: 50px 20px;
-    border-radius: 0 0 24px 24px;
-    text-align: center;
-}
+            color: #ffffff;
+            padding: 50px 20px;
+            border-radius: 0 0 24px 24px;
+            text-align: center;
+        }
 
-.hero-banner h1 {
-    font-weight: 700;
-    font-size: 2.2rem;
-}
+        .hero-banner h1 {
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
 
-/* Category Filter Buttons */
-.category-scroll {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 25px 0;
-}
+        /* Category Filter Buttons */
+        .category-scroll {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
 
-.btn-category {
-    border: none;
-    background-color: #fdfbf7;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: 500;
-    color: #3c1e0a;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
+        .btn-category {
+            border: none;
+            background-color: #fdfbf7;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #3c1e0a;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-.btn-category.active, 
-.btn-category:hover {
-    background-color: #3c1e0a;
-    color: #ffffff;
-}
+        .btn-category.active,
+        .btn-category:hover {
+            background-color: #3c1e0a;
+            color: #ffffff;
+        }
 
-/* Menu Product Cards */
-.menu-card {
-    background: #ffffff;
-    border-radius: 16px;
-    border: none;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100%;
-}
+        /* Menu Product Cards */
+        .menu-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
 
-.menu-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
 
-.menu-card-img-wrapper {
-    position: relative;
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-}
+        .menu-card-img-wrapper {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
 
-.menu-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .menu-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-/* Badges (ក្តៅ / ត្រជាក់) */
-.badge-hot-iced {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #ffffff;
-}
+        /* Badges (ក្តៅ / ត្រជាក់) */
+        .badge-hot-iced {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
 
-.badge-hot-iced.bg-danger {
-    background-color: #e74c3c !important;
-}
+        .badge-hot-iced.bg-danger {
+            background-color: #e74c3c !important;
+        }
 
-.badge-hot-iced.bg-primary {
-    background-color: #007bff !important;
-}
+        .badge-hot-iced.bg-primary {
+            background-color: #007bff !important;
+        }
 
-/* Modal Customization */
-.modal-content {
-    border-radius: 20px;
-    border: none;
-    overflow: hidden;
-}
-/* Card Container */
-.menu-card {
-    border: none;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    background: #ffffff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        /* Modal Customization */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
 
-.menu-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+        /* Card Container */
+        .menu-card {
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            background: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-/* Image Wrapper */
-.menu-card-img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
 
-.menu-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        /* Image Wrapper */
+        .menu-card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
 
-/* Badge ក្តៅ / ត្រជាក់ */
-.badge-hot-iced {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 0.75rem;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-}
+        .menu-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-/* អក្សរតម្លៃ ($1.50) */
-.price-text {
-    color: #0d6efd; /* ពណ៌ខៀវ */
-    font-weight: 700;
-    font-size: 1.1rem;
-}
+        /* Badge ក្តៅ / ត្រជាក់ */
+        .badge-hot-iced {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
 
-/* ប៊ូតុង + កម្ម៉ង់ */
-.btn-order {
-    background-color: #1a1a1a; /* ពណ៌ខ្មៅចាស់ */
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-}
+        /* អក្សរតម្លៃ ($1.50) */
+        .price-text {
+            color: #0d6efd;
+            /* ពណ៌ខៀវ */
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
 
-.btn-order:hover {
-    background-color: #3e2723; /* ប្តូរទៅពណ៌ត្នោតកាហ្វេពេលដាក់ Mouse លើ */
-    color: #ffffff;
-}
-/* Import Font Siemreap */
-@import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
+        /* ប៊ូតុង + កម្ម៉ង់ */
+        .btn-order {
+            background-color: #1a1a1a;
+            /* ពណ៌ខ្មៅចាស់ */
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
 
-body {
-    font-family: 'Siemreap', sans-serif;
-    background-color: #f7f3ee; /* ពណ៌ផ្ទៃក្រោយកាកាវស្តើង */
-    color: #333333;
-    margin: 0;
-    padding: 0;
-}
+        .btn-order:hover {
+            background-color: #3e2723;
+            /* ប្តូរទៅពណ៌ត្នោតកាហ្វេពេលដាក់ Mouse លើ */
+            color: #ffffff;
+        }
 
-/* Category Filter Bar */
-.category-wrapper {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        /* Import Font Siemreap */
+        @import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
 
-.btn-category {
-    background-color: #ffffff;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #333333;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-    transition: all 0.2s ease;
-}
+        body {
+            font-family: 'Siemreap', sans-serif;
+            background-color: #f7f3ee;
+            /* ពណ៌ផ្ទៃក្រោយកាកាវស្តើង */
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
 
-.btn-category.active,
-.btn-category:hover {
-    background-color: #3c1e0a; /* ពណ៌ត្នោតចាស់ */
-    color: #ffffff;
-}
+        /* Category Filter Bar */
+        .category-wrapper {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* Card Container Structure */
-.menu-card {
-    border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .btn-category {
+            background-color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #333333;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+        }
 
-.menu-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-.menu-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .btn-category.active,
+        .btn-category:hover {
+            background-color: #3c1e0a;
+            /* ពណ៌ត្នោតចាស់ */
+            color: #ffffff;
+        }
 
-.badge-hot-iced {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 0.75rem;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-weight: 500;
-}
+        /* Card Container Structure */
+        .menu-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-.text-xs {
-    font-size: 0.75rem;
-}
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
 
-/* Price & Button Styling */
-.price-text {
-    color: #0d6efd; /* ពណ៌ខៀវ */
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-.btn-order:hover {
-    background-color: #3c1e0a;
-    color: #ffffff;
-}
-/* Footer Styling */
-.coffee-footer {
-    background-color: #2b1507; /* ពណ៌ត្នោតចាស់ដិត */
-    color: #e0e0e0;
-}
+        .menu-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.coffee-footer h5, 
-.coffee-footer h6 {
-    font-family: 'Siemreap', sans-serif;
-}
+        .badge-hot-iced {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 500;
+        }
 
-.coffee-footer .text-light-50 {
-    color: rgba(255, 255, 255, 0.7);
-}
+        .text-xs {
+            font-size: 0.75rem;
+        }
 
-.social-links .btn {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
+        /* Price & Button Styling */
+        .price-text {
+            color: #0d6efd;
+            /* ពណ៌ខៀវ */
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
 
-.social-links .btn:hover {
-    background-color: #ffc107;
-    border-color: #ffc107;
-    color: #2b1507;
-}
-/* Container សម្រាប់តម្រៀបប៊ូតុង */
-.category-wrapper {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
+        .btn-order:hover {
+            background-color: #3c1e0a;
+            color: #ffffff;
+        }
 
-/* ស្ទាយប៊ូតុងធម្មតា (ពណ៌ស + Border ត្នោតស្តើង) */
-.btn-category {
-    font-family: 'Kantumruy Pro', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    
-    background-color: #ffffff;
-    color: #2c1810; /* ពណ៌អក្សរត្នោតចាស់ */
-    border: 1.5px solid #e0c3fc; /* ឬពណ៌សាច់ក្រែមត្នោតស្តើង #d3b8ae */
-    border-color: #d8c3b0;
-    
-    padding: 8px 22px;
-    border-radius: 50px; /* ធ្វើឱ្យកោងជារង្វង់ពងក្រពើ */
-    
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 6px rgba(244, 17, 17, 0.03);
-}
+        /* Footer Styling */
+        .coffee-footer {
+            background-color: #2b1507;
+            /* ពណ៌ត្នោតចាស់ដិត */
+            color: #e0e0e0;
+        }
 
-/* ស្ទាយប៊ូតុង "ទាំងអស់" ឬ ប៊ូតុងដែលកំពុងចុច (Active / Hover) */
-.btn-category.active {
-    background-color: #3b2219; /* ពណ៌ត្នោតចាស់ដិត */
-    color: #ffffff; /* អក្សរពណ៌ស */
-    border-color: #3b2219;
-    box-shadow: 0 4px 10px rgba(59, 34, 25, 0.25);
-}
+        .coffee-footer h5,
+        .coffee-footer h6 {
+            font-family: 'Siemreap', sans-serif;
+        }
 
-.btn-category:hover:not(.active) {
-    border-color: #3b2219;
-}
+        .coffee-footer .text-light-50 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links .btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .social-links .btn:hover {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #2b1507;
+        }
+
+        /* Container សម្រាប់តម្រៀបប៊ូតុង */
+        .category-wrapper {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        /* ស្ទាយប៊ូតុងធម្មតា (ពណ៌ស + Border ត្នោតស្តើង) */
+        .btn-category {
+            font-family: 'Kantumruy Pro', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            background-color: #ffffff;
+            color: #2c1810;
+            /* ពណ៌អក្សរត្នោតចាស់ */
+            border: 1.5px solid #e0c3fc;
+            /* ឬពណ៌សាច់ក្រែមត្នោតស្តើង #d3b8ae */
+            border-color: #d8c3b0;
+
+            padding: 8px 22px;
+            border-radius: 50px;
+            /* ធ្វើឱ្យកោងជារង្វង់ពងក្រពើ */
+
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(244, 17, 17, 0.03);
+        }
+
+        /* ស្ទាយប៊ូតុង "ទាំងអស់" ឬ ប៊ូតុងដែលកំពុងចុច (Active / Hover) */
+        .btn-category.active {
+            background-color: #3b2219;
+            /* ពណ៌ត្នោតចាស់ដិត */
+            color: #ffffff;
+            /* អក្សរពណ៌ស */
+            border-color: #3b2219;
+            box-shadow: 0 4px 10px rgba(59, 34, 25, 0.25);
+        }
+
+        .btn-category:hover:not(.active) {
+            border-color: #3b2219;
+        }
     </style>
 </head>
-<body>
-    <!DOCTYPE html>
-<html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aston Coffee - ហាងកាហ្វេ អាស្តុន</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font Khmer -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand d-flex align-items-center gap-2 fs-4" href="#">
-                <i class="fa-solid fa-mug-hot"></i>
-            ASTON COFFEE
-            </a>
-            <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-outline-light btn-sm rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#historyModal">
-                    <i class="fa-solid fa-clock-rotate-left me-1"></i> ប្រវត្តិបញ្ជាទិញ
-                </button>
-                <button class="btn btn-warning rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
-                    <i class="fa-solid fa-basket-shopping text-dark"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Banner Section -->
-    <div class="hero-banner">
-        <div class="container">
-            <h2 class="mb-2">ស្វាគមន៍មកកាន់ ASTON COFFEE</h2>
-            <p class="mb-4">កាហ្វេឈ្ងុយឆ្ងាញ់ មានគុណភាពខ្ពស់ ☕✨</p>
-            <!-- Search Box -->
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="input-group rounded-pill overflow-hidden bg-white shadow-sm">
-                        <span class="input-group-text bg-white border-0 ps-3">
-                            <i class="fa-solid fa-magnifying-glass text-muted"></i>
-                        </span>
-                        <input type="text" id="searchInput" class="form-control border-0 py-2" placeholder="ស្វែងរកកាហ្វេ​ ឬ នំ..." onkeyup="filterProducts()">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!DOCTYPE html>
-<html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aston Coffee</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
 <body>
-    <div class="container my-4">
-        <!-- Category Filter Buttons Section -->
-        <div class="category-wrapper mb-4">
-            <button class="btn-category">
-                <i class="fa-solid fa-border-all me-1"></i> ទាំងអស់
-            </button>
-            <button class="btn-category">
-                <i class="fa-solid fa-fire me-1"></i> ក្តៅ (Hot)
-            </button>
-            <button class="btn-category">
-                <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់ (Iced)
-            </button>
-            <button class="btn-category">
-                <i class="fa-solid fa-blender me-1"></i> ក្រឡុក (Frappe)
-            </button>
-            <button class="btn-category">
-                <i class="fa-solid fa-leaf me-1"></i> តែ (Tea)
-            </button>
-            <button class="btn-category">
-                <i class="fa-solid fa-cookie-bite me-1"></i> នំ (Bakery)
-            </button>
-        </div>
-        <!-- Product Grid Section -->
-        <div class="row g-3">
-            <!-- Card 1 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p16.jpg"  class="menu-card-img" alt="កាហ្វេ កាពូស៊ីណូ ត្រជាក់">
-                        <span class="badge badge-hot-iced bg-primary">
-                            <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">កាហ្វេ កាពូស៊ីណូ ត្រជាក់</h6>
-                            <p class="text-muted small mb-0">Iced Cappuccino</p>
-                            <p class="text-muted text-xs mb-0">undefined</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
+    <!DOCTYPE html>
+    <html lang="km">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aston Coffee - ហាងកាហ្វេ អាស្តុន</title>
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Font Khmer -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Header Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand d-flex align-items-center gap-2 fs-4" href="#">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    ASTON COFFEE
+                </a>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-outline-light btn-sm rounded-pill px-3" data-bs-toggle="modal"
+                        data-bs-target="#historyModal">
+                        <i class="fa-solid fa-clock-rotate-left me-1"></i> ប្រវត្តិបញ្ជាទិញ
+                    </button>
+                    <button class="btn btn-warning rounded-circle" data-bs-toggle="offcanvas"
+                        data-bs-target="#cartOffcanvas">
+                        <i class="fa-solid fa-basket-shopping text-dark"></i>
+                    </button>
                 </div>
             </div>
-            <!-- Card 2 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p6.jpg" class="menu-card-img" alt="កាហ្វេ ឡាត់តេ ក្តៅ">
-                        <span class="badge badge-hot-iced bg-danger">
-                            <i class="fa-solid fa-fire me-1"></i> ក្តៅ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">កាហ្វេ ឡាត់តេ ក្តៅ</h6>
-                            <p class="text-muted small mb-0">Hot Latte</p>
-                            <p class="text-muted text-xs mb-0">undefined</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
+        </nav>
+
+        <!-- Hero Banner Section -->
+        <div class="hero-banner">
+            <div class="container">
+                <h2 class="mb-2">ស្វាគមន៍មកកាន់ ASTON COFFEE</h2>
+                <p class="mb-4">កាហ្វេឈ្ងុយឆ្ងាញ់ មានគុណភាពខ្ពស់ ☕✨</p>
+                <!-- Search Box -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="input-group rounded-pill overflow-hidden bg-white shadow-sm">
+                            <span class="input-group-text bg-white border-0 ps-3">
+                                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                            </span>
+                            <input type="text" id="searchInput" class="form-control border-0 py-2"
+                                placeholder="ស្វែងរកកាហ្វេ​ ឬ នំ..." onkeyup="filterProducts()">
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p7.jpg" class="menu-card-img" alt="កាហ្វេ អេសប្រេសសូ ក្តៅ">
-                        <span class="badge badge-hot-iced bg-danger">
-                            <i class="fa-solid fa-fire me-1"></i> ក្ដៅ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">កាហ្វេ អេសប្រេសសូ ក្តៅ</h6>
-                            <p class="text-muted small mb-0">Hot Espresso Shot</p>
-                            <p class="text-muted text-xs mb-0">undefined</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.75</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p14.jpg" class="menu-card-img" alt="កាហ្វេ អាមេរិកខាណូ ត្រជាក់">
-                        <span class="badge badge-hot-iced bg-primary">
-                            <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">កាហ្វេ អាមេរិកខាណូ ត្រជាក់</h6>
-                            <p class="text-muted small mb-0">Iced Americano</p>
-                            <p class="text-muted text-xs mb-0">undefined</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                    <img src="images/p19.jpg" class="menu-card-img" alt="ផាសិន គ្រីម ត្រជាក់">
-                        <span class="badge badge-hot-iced bg-primary">
-                            <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">ផាសិន គ្រីម ត្រជាក់</h6>
-                            <p class="text-muted small mb-0">Iced Passion Cream</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.25</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p1.jpg" class="menu-card-img" alt="តែបៃតង ម៉ាតឆា ឡាត់តេ ត្រជាក់">
-                        <span class="badge badge-hot-iced bg-primary">
-                            <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">តែបៃតង ម៉ាតឆា ឡាត់តេ ត្រជាក់</h6>
-                            <p class="text-muted small mb-0">Iced Matcha Tea Latte</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$2.00</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 7 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p4.jpg" class="menu-card-img" alt="តែបៃតង ម៉ាតឆា ក្តៅ">
-                        <span class="badge badge-hot-iced bg-danger">
-                            <i class="fa-solid fa-fire me-1"></i> ក្តៅ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">តែបៃតង ម៉ាតឆា ក្តៅ</h6>
-                            <p class="text-muted small mb-0">Hot Matcha Latte</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 8 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p15.jpg" class="menu-card-img" alt="ប៊ែរី ក្រឡុក">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ក្រឡុក
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">ប៊ែរី ក្រឡុក (Smoothie)</h6>
-                            <p class="text-muted small mb-0">Berry Smoothie</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$2.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 9 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p2.jpg" class="menu-card-img" alt="Strawberry Matcha latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ក្រឡុក
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">ម៉ាតឆា ស្រ្តូប៊ែរី (Smoothie)</h6>
-                            <p class="text-muted small mb-0">Strawberry Matcha latte</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$2.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 10 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p12.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ត្រជាក់
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">brown sugar latte (Smoothie)</h6>
-                            <p class="text-muted small mb-0">ប៊្រោន ស៊ូហ្គា</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$2.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 11 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p10.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> នំ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1"> Black Cake  </h6>
-                            <p class="text-muted small mb-0">នំខ្មៅ</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.00</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- Card 12 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p5.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> នំ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1">Strawberry Cake  </h6>
-                            <p class="text-muted small mb-0">នំស្រ្តូប៊ែរី</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$1.00</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- Card 13 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p11.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> នំ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1"> Healthy Snacks </h6>
-                            <p class="text-muted small mb-0">នំសុខភាព</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$2.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- Card 13 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p8.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ទឹក
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1"> Pocari Sweat </h6>
-                            <p class="text-muted small mb-0">ប៉ូការី</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$0.75</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 13 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p18.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ភេស្ជៈ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1"> Sting </h6>
-                            <p class="text-muted small mb-0">ស្ទីង</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$0.50</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            <!-- Card 13 -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card menu-card h-100">
-                    <div class="menu-card-img-wrapper">
-                        <img src="images/p9.jpg" class="menu-card-img" alt="brown sugar latte">
-                        <span class="badge badge-hot-iced bg-warning text-dark">
-                            <i class="fa-solid fa-blender me-1"></i> ទឹកសុទ្ធ
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between p-3">
-                        <div>
-                            <h6 class="card-title fw-bold mb-1"> Water </h6>
-                            <p class="text-muted small mb-0">ទឹកសុទ្ធ</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <span class="price-text">$0.25</span>
-                            <button class="btn btn-order">
-                                <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </div>
-    </div>
-    <!-- Footer Section -->
-<footer class="coffee-footer mt-5">
-    <div class="container py-4">
-        <div class="row g-4 text-white">
-            <!-- ផ្នែកទី ១: អំពីហាង -->
-            <div class="col-12 col-md-4">
-                <h5 class="fw-bold text-warning mb-3">
-                    <i class="fa-solid fa-mug-hot me-2"></i>Aston Coffee
-                </h5>
-                <p class="small text-light-50">
-                    យើងផ្តល់ជូននូវកាហ្វេដែលមានគុណភាពខ្ពស់ រសជាតិឆ្ងាញ់ និងបរិយាកាសស្រស់ស្រាយរាល់ថ្ងៃ។
-                </p>
-            </div>
-            <!-- ផ្នែកទី ២: ម៉ោងបើកបរិភោគ & ទំនាក់ទំនង -->
-            <div class="col-12 col-md-4">
-                <h6 class="fw-bold mb-3">ម៉ោងធ្វើការ & ទំនាក់ទំនង</h6>
-                <ul class="list-unstyled small">
-                    <li class="mb-2"><i class="fa-regular fa-clock me-2 text-warning"></i>ចន្ទ - អាទិត្យ: 7:00 AM - 8:00 PM</li>
-                    <li class="mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i>0888900899 / 0998900999</li>
-                    <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-warning"></i>កំពង់ស្ពឺ, កម្ពុជា</li>
-                </ul>
-            </div>
-            <!-- ផ្នែកទី ៣: បណ្តាញសង្គម -->
-            <div class="col-12 col-md-4">
-                <h6 class="fw-bold mb-3">តាមដានពួកយើង</h6>
-                <div class="d-flex gap-3 social-links">
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
-        <hr class="border-secondary my-3">
-        <!-- កាសិទ្ធិបោះពុម្ព (Copyright) -->
-        <div class="text-center small text-secondary">
-            &copy; 2026 Aston Coffee.
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+        <!DOCTYPE html>
+        <html lang="km">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Aston Coffee</title>
+            <!-- Bootstrap 5 CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Font Awesome Icons -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        </head>
+
+        <body>
+            <div class="container my-4">
+                <!-- Category Filter Buttons Section -->
+                <div class="category-wrapper mb-4">
+                    <button class="btn-category">
+                        <i class="fa-solid fa-border-all me-1"></i> ទាំងអស់
+                    </button>
+                    <button class="btn-category">
+                        <i class="fa-solid fa-fire me-1"></i> ក្តៅ (Hot)
+                    </button>
+                    <button class="btn-category">
+                        <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់ (Iced)
+                    </button>
+                    <button class="btn-category">
+                        <i class="fa-solid fa-blender me-1"></i> ក្រឡុក (Frappe)
+                    </button>
+                    <button class="btn-category">
+                        <i class="fa-solid fa-leaf me-1"></i> តែ (Tea)
+                    </button>
+                    <button class="btn-category">
+                        <i class="fa-solid fa-cookie-bite me-1"></i> នំ (Bakery)
+                    </button>
+                </div>
+                <!-- Product Grid Section -->
+                <div class="row g-3">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p16.jpg" class="menu-card-img" alt="កាហ្វេ កាពូស៊ីណូ ត្រជាក់">
+                                <span class="badge badge-hot-iced bg-primary">
+                                    <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">កាហ្វេ កាពូស៊ីណូ ត្រជាក់</h6>
+                                    <p class="text-muted small mb-0">Iced Cappuccino</p>
+                                    <p class="text-muted text-xs mb-0">undefined</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p6.jpg" class="menu-card-img" alt="កាហ្វេ ឡាត់តេ ក្តៅ">
+                                <span class="badge badge-hot-iced bg-danger">
+                                    <i class="fa-solid fa-fire me-1"></i> ក្តៅ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">កាហ្វេ ឡាត់តេ ក្តៅ</h6>
+                                    <p class="text-muted small mb-0">Hot Latte</p>
+                                    <p class="text-muted text-xs mb-0">undefined</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p7.jpg" class="menu-card-img" alt="កាហ្វេ អេសប្រេសសូ ក្តៅ">
+                                <span class="badge badge-hot-iced bg-danger">
+                                    <i class="fa-solid fa-fire me-1"></i> ក្ដៅ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">កាហ្វេ អេសប្រេសសូ ក្តៅ</h6>
+                                    <p class="text-muted small mb-0">Hot Espresso Shot</p>
+                                    <p class="text-muted text-xs mb-0">undefined</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.75</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p14.jpg" class="menu-card-img" alt="កាហ្វេ អាមេរិកខាណូ ត្រជាក់">
+                                <span class="badge badge-hot-iced bg-primary">
+                                    <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">កាហ្វេ អាមេរិកខាណូ ត្រជាក់</h6>
+                                    <p class="text-muted small mb-0">Iced Americano</p>
+                                    <p class="text-muted text-xs mb-0">undefined</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p19.jpg" class="menu-card-img" alt="ផាសិន គ្រីម ត្រជាក់">
+                                <span class="badge badge-hot-iced bg-primary">
+                                    <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">ផាសិន គ្រីម ត្រជាក់</h6>
+                                    <p class="text-muted small mb-0">Iced Passion Cream</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.25</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p1.jpg" class="menu-card-img" alt="តែបៃតង ម៉ាតឆា ឡាត់តេ ត្រជាក់">
+                                <span class="badge badge-hot-iced bg-primary">
+                                    <i class="fa-solid fa-snowflake me-1"></i> ត្រជាក់
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">តែបៃតង ម៉ាតឆា ឡាត់តេ ត្រជាក់</h6>
+                                    <p class="text-muted small mb-0">Iced Matcha Tea Latte</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$2.00</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p4.jpg" class="menu-card-img" alt="តែបៃតង ម៉ាតឆា ក្តៅ">
+                                <span class="badge badge-hot-iced bg-danger">
+                                    <i class="fa-solid fa-fire me-1"></i> ក្តៅ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">តែបៃតង ម៉ាតឆា ក្តៅ</h6>
+                                    <p class="text-muted small mb-0">Hot Matcha Latte</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p15.jpg" class="menu-card-img" alt="ប៊ែរី ក្រឡុក">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ក្រឡុក
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">ប៊ែរី ក្រឡុក (Smoothie)</h6>
+                                    <p class="text-muted small mb-0">Berry Smoothie</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$2.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p2.jpg" class="menu-card-img" alt="Strawberry Matcha latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ក្រឡុក
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">ម៉ាតឆា ស្រ្តូប៊ែរី (Smoothie)</h6>
+                                    <p class="text-muted small mb-0">Strawberry Matcha latte</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$2.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p12.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ត្រជាក់
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">brown sugar latte (Smoothie)</h6>
+                                    <p class="text-muted small mb-0">ប៊្រោន ស៊ូហ្គា</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$2.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p10.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> នំ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1"> Black Cake </h6>
+                                    <p class="text-muted small mb-0">នំខ្មៅ</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.00</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p5.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> នំ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1">Strawberry Cake </h6>
+                                    <p class="text-muted small mb-0">នំស្រ្តូប៊ែរី</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$1.00</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p11.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> នំ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1"> Healthy Snacks </h6>
+                                    <p class="text-muted small mb-0">នំសុខភាព</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$2.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p8.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ទឹក
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1"> Pocari Sweat </h6>
+                                    <p class="text-muted small mb-0">ប៉ូការី</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$0.75</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p18.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ភេស្ជៈ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1"> Sting </h6>
+                                    <p class="text-muted small mb-0">ស្ទីង</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$0.50</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100">
+                            <div class="menu-card-img-wrapper">
+                                <img src="images/p9.jpg" class="menu-card-img" alt="brown sugar latte">
+                                <span class="badge badge-hot-iced bg-warning text-dark">
+                                    <i class="fa-solid fa-blender me-1"></i> ទឹកសុទ្ធ
+                                </span>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between p-3">
+                                <div>
+                                    <h6 class="card-title fw-bold mb-1"> Water </h6>
+                                    <p class="text-muted small mb-0">ទឹកសុទ្ធ</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <span class="price-text">$0.25</span>
+                                    <button class="btn btn-order">
+                                        <i class="fa-solid fa-plus me-1"></i> កម្ម៉ង់
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Section -->
+            <footer class="coffee-footer mt-5">
+                <div class="container py-4">
+                    <div class="row g-4 text-white">
+                        <!-- ផ្នែកទី ១: អំពីហាង -->
+                        <div class="col-12 col-md-4">
+                            <h5 class="fw-bold text-warning mb-3">
+                                <i class="fa-solid fa-mug-hot me-2"></i>Aston Coffee
+                            </h5>
+                            <p class="small text-light-50">
+                                យើងផ្តល់ជូននូវកាហ្វេដែលមានគុណភាពខ្ពស់ រសជាតិឆ្ងាញ់ និងបរិយាកាសស្រស់ស្រាយរាល់ថ្ងៃ។
+                            </p>
+                        </div>
+                        <!-- ផ្នែកទី ២: ម៉ោងបើកបរិភោគ & ទំនាក់ទំនង -->
+                        <div class="col-12 col-md-4">
+                            <h6 class="fw-bold mb-3">ម៉ោងធ្វើការ & ទំនាក់ទំនង</h6>
+                            <ul class="list-unstyled small">
+                                <li class="mb-2"><i class="fa-regular fa-clock me-2 text-warning"></i>ចន្ទ - អាទិត្យ:
+                                    7:00 AM - 8:00 PM</li>
+                                <li class="mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i>0888900899 /
+                                    0998900999</li>
+                                <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-warning"></i>កំពង់ស្ពឺ,
+                                    កម្ពុជា</li>
+                            </ul>
+                        </div>
+                        <!-- ផ្នែកទី ៣: បណ្តាញសង្គម -->
+                        <div class="col-12 col-md-4">
+                            <h6 class="fw-bold mb-3">តាមដានពួកយើង</h6>
+                            <div class="d-flex gap-3 social-links">
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                        class="fa-brands fa-telegram"></i></a>
+                                <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                        class="fa-brands fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="border-secondary my-3">
+                    <!-- កាសិទ្ធិបោះពុម្ព (Copyright) -->
+                    <div class="text-center small text-secondary">
+                        &copy; 2026 Aston Coffee.
+                    </div>
+                </div>
+            </footer>
+        </body>
+
+        </html>
